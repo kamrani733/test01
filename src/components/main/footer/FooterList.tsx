@@ -14,13 +14,16 @@ export default function FooterList({ footerItems }: FooterListProps) {
           key={item.id}
           className="col-span-4 px-3 lg:col-span-1 md:col-span-2"
         >
-          <Heading level={4} className="mb-3">
+          <Heading level={4} className="mb-3 text-[#F5F5F5]">
             {item.title}
           </Heading>
           <ul className="space-y-1">
             {item.children!.map((child) => (
               <li key={child.id}>
-                <Link href={item.link} className="text-primary-600 text-xs">
+                <Link 
+                  href={item.link} 
+                  className="text-[#D4A373] hover:text-[#F5F5F5] transition-colors duration-300 text-xs"
+                >
                   {child.title}
                 </Link>
               </li>

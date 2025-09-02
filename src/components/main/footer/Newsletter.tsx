@@ -41,10 +41,10 @@ export default function Newsletter() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full mb-4">
-      <Heading level={3} className="mb-4">
+      <Heading level={3} className="mb-4 text-[#F5F5F5]">
         {dictionary.ui.newsletter.title}
       </Heading>
-      <p className="text-primary-600 mb-1">
+      <p className="text-[#F5F5F5]/80 mb-1">
         {dictionary.ui.newsletter.description}
       </p>
       <div className="h-20 relative">
@@ -59,13 +59,13 @@ export default function Newsletter() {
         />
         <button
           type="submit"
-          className="absolute top-1/7 rtl:left-2 ltr:right-2"
+          className="absolute top-1/7 rtl:left-2 ltr:right-2 p-1 rounded-full hover:bg-[#8B6F47]/20 transition-colors duration-300"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
-            <Loader2 className="w-4 animate-spin" />
+            <Loader2 className="w-4 animate-spin text-[#D4A373]" />
           ) : (
-            <Send className="w-4 h-4 text-primary-600 rtl:rotate-270" />
+            <Send className="w-4 h-4 text-[#D4A373] rtl:rotate-270" />
           )}
         </button>
       </div>

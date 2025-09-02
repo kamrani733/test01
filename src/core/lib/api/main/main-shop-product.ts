@@ -114,3 +114,28 @@ export const getProductColorsById = async (id: number) => {
     }
   }
 };
+
+export const getFeaturedProducts = async (limit: number = 6) => {
+  try {
+    const { data } = await api.get('/api/products/featured', {
+      params: { limit },
+    });
+    return data;
+  } catch (error) {
+    if (error instanceof AxiosError && error.response) {
+      return error.response.data;
+    }
+    // Fallback: get products from 'all' category if featured endpoint doesn't exist
+    try {
+      const { data } = await api.get('/api/categories/products/all', {
+        params: { perPage: limit, page: 1 },
+      });
+      return data;
+    } catch (fallbackError) {
+      if (fallbackError instanceof AxiosError && fallbackError.response) {
+        return fallbackError.response.data;
+      }
+      return { data: { data: [] } };
+    }
+  }
+};
