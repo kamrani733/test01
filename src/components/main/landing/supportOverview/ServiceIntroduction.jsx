@@ -6,7 +6,7 @@ export default function ServiceIntroduction({ data }) {
       <Heading level={2} className="mb-1">
         {data.title}
       </Heading>
-      <p className="text-primary-600 text-justify">{data.description}</p>
+      <p className="text-[#525252] text-justify leading-relaxed">{data.description}</p>
     </div>
   );
 }

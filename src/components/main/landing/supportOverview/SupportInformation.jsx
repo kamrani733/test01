@@ -13,11 +13,11 @@ export default function SupportInformation({ items }) {
     <Accordion type="single" collapsible className="w-full">
       {items.map((item) => (
         <AccordionItem value={item.title} key={item.title}>
-          <AccordionTrigger className="hover:no-underline cursor-pointer">
+          <AccordionTrigger className="hover:no-underline cursor-pointer text-[#2F2F2F] font-serif">
             {item.title}
           </AccordionTrigger>
-          <AccordionContent className="text-primary-600">
-            <p className="mb-4">{item.description}</p>
+          <AccordionContent className="text-[#525252]">
+            <p className="mb-4 leading-relaxed">{item.description}</p>
             {item.link && item.buttonContent && (
               <Button asChild variant="secondary">
                 <Link href={item.link}>{item.buttonContent}</Link>

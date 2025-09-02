@@ -12,18 +12,18 @@ import { ArrowLeftIcon, Link } from "lucide-react";
 import { useDictionary } from "@/core/hooks/use-dictionary";
 
 export default function ProductBar({ data }: { data: MainShopProduct }) {
-    const { dictionary } = useDictionary();
+  const { dictionary } = useDictionary();
   console.log(data);
-  
+
   return (
     <>
       <div className="flex justify-between mb-2">
         <div>
           <Heading level={3}>{data.title}</Heading>
-          <p className="text-primary-600">{data.description}</p>
+          <p className="text-[#525252]">{data.description}</p>
         </div>
         {data.link && (
-          <Link className="font-primary-bold flex items-center gap-2" href={data.link}>
+          <Link className="font-medium flex items-center gap-2 text-[#8B6F47] hover:text-[#D4A373] transition-colors" href={data.link}>
             {dictionary.ui.pages.seeAll}
             <ArrowLeftIcon className="stroke-2 size-4 rotate-180" />
           </Link>
@@ -39,7 +39,15 @@ export default function ProductBar({ data }: { data: MainShopProduct }) {
       >
         {data.items.map((item) => (
           <SwiperSlide key={item.id} style={{ width: "300px" }}>
-            <ProductCard product={item} />
+            <ProductCard
+              id={item.id.toString()}
+              name={item.title}
+              price={parseFloat(item.price || "0")}
+              rating={4.5}
+              image={item.thumbnail?.url || "/placeholder.jpg"}
+              description={item.description || item.excerpt || ""}
+              href={`/shop/product/${item.id}/${item.slug}`}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

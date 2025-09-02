@@ -18,10 +18,10 @@ export function SwiperList({ data }: SwiperListProps) {
       <div className="flex justify-between mb-2">
         <div>
           <Heading level={3}>{data.title}</Heading>
-          <p className="text-primary-600">{data.description}</p>
+          <p className="text-[#525252]">{data.description}</p>
         </div>
         {data.link && (
-          <Link className="font-primary-bold flex items-center gap-2" href={data.link}>
+          <Link className="font-medium flex items-center gap-2 text-[#8B6F47] hover:text-[#D4A373] transition-colors" href={data.link}>
             {dictionary.ui.pages.seeAll}
             <ArrowLeftIcon className="stroke-2 size-4 ltr:rotate-180" />
           </Link>
@@ -44,7 +44,7 @@ export function SwiperList({ data }: SwiperListProps) {
           const Content = (
             <div>
               <div
-                className="w-full h-full mb-2 relative"
+                className="w-full h-full mb-2 relative overflow-hidden rounded-lg bg-[#F5F5F5]"
                 style={{ width: '300px', height: '360px' }}
               >
                 {item.image_info?.url && (
@@ -52,12 +52,12 @@ export function SwiperList({ data }: SwiperListProps) {
                     src={item.image_info.url}
                     alt={item.title || ''}
                     fill
-                    className="object-cover border border-primary-400"
+                    className="object-cover"
                   />
                 )}
               </div>
               <Heading level={3}>{item.title}</Heading>
-              <p className="text-primary-600">{item.description}</p>
+              <p className="text-[#525252]">{item.description}</p>
             </div>
           );
 

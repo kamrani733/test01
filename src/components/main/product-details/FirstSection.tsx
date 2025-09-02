@@ -20,12 +20,12 @@ export default function FirstSection() {
       <DisplayImages />
       <section className="col-span-6 lg:col-span-2 flex flex-col gap-14">
         <header>
-          <p className="text-primary-600">توضیحات محصول</p>
-          <p className="text-primary-600">Nawabari ottoman, small</p>
+          <p className="text-[#525252]">توضیحات محصول</p>
+          <p className="text-[#2F2F2F] font-serif">Nawabari ottoman, small</p>
         </header>
 
         <div>
-          <p className="text-primary-600 mb-3">طراحی خود را انتخاب کنید</p>
+          <p className="text-[#525252] mb-3">طراحی خود را انتخاب کنید</p>
           <div className="flex flex-col gap-3 mb-3">
             <Selecting />
             <Selecting />
@@ -35,7 +35,7 @@ export default function FirstSection() {
             {info.map((item) => (
               <div
                 key={item.id}
-                className="text-primary-600 flex gap-5 select-none"
+                className="text-[#525252] flex gap-5 select-none"
               >
                 <p>{item.title}</p>
                 <p>{item.description}</p>
@@ -45,23 +45,23 @@ export default function FirstSection() {
         </div>
 
         <div>
-          <div className="flex justify-between text-primary-600 mb-6">
+          <div className="flex justify-between text-[#525252] mb-6">
             <div className="flex gap-2">
               <p>قیمت فعلی</p>
-              <p className="">$899.00</p>
+              <p className="font-serif text-[#8B6F47]">$899.00</p>
             </div>
-            <p className="bg-green-100 px-2 rounded-sm">انتخاب مدیر</p>
+            <p className="bg-green-100 px-2 rounded-sm text-green-800">انتخاب مدیر</p>
           </div>
 
           <CustomButton className="mb-3">افزودن به سبد خرید</CustomButton>
-          <div className="flex justify-between text-primary-600 mb-6">
+          <div className="flex justify-between text-[#525252] mb-6">
             <div className="flex gap-4">
               <p>زمان تحویل مورد انتظار :</p>
               <p>هفته 12-10</p>
             </div>
-            <Link href={"#"}>دیدن جزئیات بیشتر محصول</Link>
+            <Link href={"#"} className="text-[#8B6F47] hover:text-[#D4A373] transition-colors">دیدن جزئیات بیشتر محصول</Link>
           </div>
-          <p className="text-primary-600">
+          <p className="text-[#525252] leading-relaxed">
             کیفیت زمان می‌برد - بیشتر مبلمان ما سفارشی ساخته می‌شوند و با دقت و
             ظرافت، دقیقاً برای شما ساخته می‌شوند
           </p>

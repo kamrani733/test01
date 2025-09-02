@@ -14,8 +14,8 @@ type Step = 1 | 2 | 3;
 
 export default function LoginFlow() {
   const { dictionary } = useDictionary();
-  const [stepHistory, setStepHistory] = useState<Step[]>([1]); 
-  const step = stepHistory[stepHistory.length - 1]; 
+  const [stepHistory, setStepHistory] = useState<Step[]>([1]);
+  const step = stepHistory[stepHistory.length - 1];
 
   const [mobile, setMobile] = useState("");
   const [sessionToken, setSessionToken] = useState("");
@@ -52,8 +52,8 @@ export default function LoginFlow() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center">
-      <div className="flex flex-col justify-center bg-primary-100 border border-primary-200 rounded-sm p-5 md:p-6 lg:p-10 mx-auto w-11/12 lg:w-2/5">
+    <div className="h-screen flex items-center justify-center bg-[#F5F5F5]">
+      <div className="flex flex-col justify-center bg-white border border-[#E8E8E8] rounded-lg shadow-sm p-5 md:p-6 lg:p-10 mx-auto w-11/12 lg:w-2/5">
         {/* Header */}
         <div className="flex justify-between mb-10">
           <Heading level={2} className="select-none">
@@ -74,7 +74,7 @@ export default function LoginFlow() {
             setRememberMe={setRememberMe}
             mobile={mobile}
             rememberMe={rememberMe}
-            setStep={goToStep} 
+            setStep={goToStep}
           />
         )}
         {step === 2 && (
@@ -94,7 +94,7 @@ export default function LoginFlow() {
             timeLeft={timeLeft}
             setTimeLeft={setTimeLeft}
             goBack={goBack}
-            setStep={goToStep} 
+            setStep={goToStep}
           />
         )}
       </div>

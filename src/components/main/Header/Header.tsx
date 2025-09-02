@@ -19,7 +19,7 @@ export default async function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 h-18 bg-primary-0 text-primary-900 flex items-center justify-between px-4 py-4 sm:px-6 lg:px-12">
+      <header className="sticky top-0 z-50 h-18 bg-white text-[#2F2F2F] flex items-center justify-between px-4 py-4 sm:px-6 lg:px-12 shadow-sm border-b border-[#E8E8E8]">
         <div className="flex items-center gap-5 w-5/12">
           <HeaderNavToggle />
           <HeaderNavMenu />

@@ -10,9 +10,9 @@ interface BannerProps {
 
 export function Banner({ data }: BannerProps) {
   console.log(data);
-  
+
   const Content = (
-    <div className="relative w-full h-56 lg:h-60 flex items-center justify-center p-8">
+    <div className="relative w-full h-56 lg:h-60 flex items-center justify-center p-8 overflow-hidden rounded-lg">
       {data.image_info && (
         <Image
           src={data.image_info?.url}
@@ -22,10 +22,10 @@ export function Banner({ data }: BannerProps) {
         />
       )}
       <div className="absolute inset-0 bg-black/40 z-0" />
-      <div className="absolute text-center">
+      <div className="absolute text-center z-10">
         <Heading
           level={1}
-          className="text-primary-0 text-[calc(1.2rem+0.3vw)]"
+          className="text-white text-[calc(1.2rem+0.3vw)] font-serif"
         >
           {data.title}
         </Heading>

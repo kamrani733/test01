@@ -48,10 +48,10 @@ export default function SupportInformation() {
     <Accordion type="single" collapsible className="w-full">
       {SupportInformationItems.map((item) => (
         <AccordionItem value={item.value} key={item.id}>
-          <AccordionTrigger className="hover:no-underline cursor-pointer">
+          <AccordionTrigger className="hover:no-underline cursor-pointer text-[#2F2F2F] font-serif">
             {item.title}
           </AccordionTrigger>
-          <AccordionContent className="text-primary-600">
+          <AccordionContent className="text-[#525252] leading-relaxed">
             {item.description}
           </AccordionContent>
         </AccordionItem>

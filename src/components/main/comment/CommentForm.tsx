@@ -67,8 +67,8 @@ export default function CommentForm({ productId }: CommentFormProps) {
 
   if (!isAuthenticated) {
     return (
-      <div className="my-4 p-4 flex items-center justify-center flex-col">
-        <p className="mb-4">{dictionary.ui.pages.alertforcomment}</p>
+      <div className="my-4 p-4 flex items-center justify-center flex-col bg-[#F5F5F5] rounded-lg">
+        <p className="mb-4 text-[#525252]">{dictionary.ui.pages.alertforcomment}</p>
         <CustomButton
           variant="black"
           size="lg"
@@ -99,13 +99,15 @@ export default function CommentForm({ productId }: CommentFormProps) {
         type="submit"
         variant="black"
         disabled={isSubmitting}
-        size="sm"
-        className="h-9 px-4 text-base w-fit"
+        className="w-fit"
       >
         {isSubmitting ? (
-          <Loader2 className="animate-spin" />
+          <>
+            <Loader2 className="w-4 h-4 animate-spin" />
+            {dictionary.common.loading}
+          </>
         ) : (
-          dictionary.common.submit
+          "ارسال نظر"
         )}
       </CustomButton>
     </form>

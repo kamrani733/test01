@@ -22,7 +22,7 @@ export default function BannerSlider({
   varient = "full",
 }: BannerSliderProps) {
   console.log(slides);
-  
+
   return (
     <Swiper
       modules={[Navigation, Autoplay]}
@@ -34,8 +34,8 @@ export default function BannerSlider({
       }}
       loop={true}
       autoplay={{
-        delay: 3000, 
-        disableOnInteraction: false, 
+        delay: 3000,
+        disableOnInteraction: false,
       }}
       className="w-full"
     >
@@ -54,14 +54,14 @@ export default function BannerSlider({
               className="w-full h-svh object-cover z-0 absolute"
             />
             <div className="absolute inset-0 bg-black/20 z-0" />
-            <div className="text-primary-100 absolute top-1/2 left-1/2 text-center -translate-y-1/2 -translate-x-1/2 z-10 space-y-3">
+            <div className="text-white absolute top-1/2 left-1/2 text-center -translate-y-1/2 -translate-x-1/2 z-10 space-y-3">
               <Heading
                 level={1}
-                className="m text-primary-0 text-[calc(1.2rem+0.3vw)]"
+                className="m text-white text-[calc(1.2rem+0.3vw)] font-serif"
               >
                 {slide.title}
               </Heading>
-              <Heading level={2} className="text-primary-0">
+              <Heading level={2} className="text-white font-serif">
                 {slide?.description}
               </Heading>
               {slide.buttonContent && <CustomButton size="lg" variant="black">{slide?.buttonContent}</CustomButton>}
@@ -82,11 +82,11 @@ export default function BannerSlider({
         );
       })}
 
-      <button className="swiper-button-prev-custom absolute ltr:left-4 top-1/2 -translate-y-1/2 z-10 text-primary-100 cursor-pointer disabled:opacity-0 disabled:cursor-default rtl:rotate-180 rtl:right-4 ">
-        <ChevronLeft className="w-10 h-10 stroke-1 text-primary-0" />
+      <button className="swiper-button-prev-custom absolute ltr:left-4 top-1/2 -translate-y-1/2 z-10 text-white cursor-pointer disabled:opacity-0 disabled:cursor-default rtl:rotate-180 rtl:right-4 ">
+        <ChevronLeft className="w-10 h-10 stroke-1 text-white" />
       </button>
-      <button className="swiper-button-next-custom absolute ltr:right-4 top-1/2 -translate-y-1/2 z-10 text-primary-100 cursor-pointer disabled:opacity-0 disabled:cursor-default rtl:rotate-180 rtl:left-4">
-        <ChevronRight className="w-10 h-10 stroke-1 text-primary-0" />
+      <button className="swiper-button-next-custom absolute ltr:right-4 top-1/2 -translate-y-1/2 z-10 text-white cursor-pointer disabled:opacity-0 disabled:cursor-default rtl:rotate-180 rtl:left-4">
+        <ChevronRight className="w-10 h-10 stroke-1 text-white" />
       </button>
     </Swiper>
   );

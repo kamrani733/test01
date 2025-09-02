@@ -8,24 +8,24 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/core/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xs text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         default:
-          'bg-primary-900 text-primary-0 hover:bg-primary-0 hover:border hover:border-primary-900 hover:text-primary-900',
-        secondary: 'bg-primary-100 text-primary-900 hover:bg-primary-100/80',
+          'bg-[#8B6F47] text-white hover:bg-[#D4A373]',
+        secondary: 'bg-[#E8E8E8] text-[#2F2F2F] hover:bg-[#D4A373] hover:text-white',
         outline:
-          'border border-input bg-primary-0 hover:bg-primary-100 text-primary-900',
+          'border-2 border-[#8B6F47] bg-transparent text-[#8B6F47] hover:bg-[#8B6F47] hover:text-white',
         ghost:
-          'shadow-none bg-primary-0 text-primary-900 hover:bg-primary-100 hover:text-primary-900',
+          'shadow-none bg-transparent text-[#2F2F2F] hover:bg-[#E8E8E8] hover:text-[#2F2F2F]',
         black:
-          'bg-primary-900 border-primary-900 text-primary-0 border hover:bg-primary-900',
+          'bg-[#2F2F2F] border-[#2F2F2F] text-white border hover:bg-[#8B6F47] hover:border-[#8B6F47]',
       },
       size: {
         sm: 'h-8 px-3 py-2 text-sm',
         default: 'h-9 px-4 py-2 text-sm',
-        lg: 'h-11 text-base px-4 py-2',
+        lg: 'h-11 text-base px-6 py-3',
         full: 'h-11 text-base px-4 py-2 w-full',
         icon: 'size-9',
       },

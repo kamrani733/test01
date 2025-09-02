@@ -11,7 +11,7 @@ export default async function HeaderNavMenu() {
         <Link
           key={item.id}
           href={item.link}
-          className="text-sm text-primary-900 hover:text-primary transition-colors"
+          className="text-sm text-[#2F2F2F] hover:text-[#8B6F47] transition-colors font-medium"
         >
           {item.title}
         </Link>

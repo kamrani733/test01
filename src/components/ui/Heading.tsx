@@ -20,16 +20,16 @@ export function Heading({
 
   const sizeMap: Record<Variant, Record<1 | 2 | 3 | 4, string>> = {
     default: {
-      1: "text-xl font-primary-bold",
-      2: "text-base font-primary-bold",
-      3: "text-sm font-primary-bold",
-      4: "text-xs font-primary-bold",
+      1: "text-4xl font-serif font-bold text-[#2F2F2F]",
+      2: "text-2xl font-serif font-semibold text-[#2F2F2F]",
+      3: "text-xl font-serif font-semibold text-[#2F2F2F]",
+      4: "text-lg font-serif font-medium text-[#2F2F2F]",
     },
     secondary: {
-      1: "text-base",
-      2: "text-sm",
-      3: "text-xs",
-      4: "",
+      1: "text-2xl font-serif font-medium text-[#525252]",
+      2: "text-xl font-serif font-medium text-[#525252]",
+      3: "text-lg font-serif font-medium text-[#525252]",
+      4: "text-base font-serif font-medium text-[#525252]",
     },
   };
 

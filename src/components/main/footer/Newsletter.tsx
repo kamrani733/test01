@@ -3,7 +3,6 @@
 import { Loader2, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Heading } from "@/components/ui/Heading";
 import { toast } from "sonner";
 import TextInput from "@/components/account/input/TextInput";
 import { newsletterSubscribe } from "@/core/lib/api/main/landing";
@@ -30,6 +29,7 @@ export default function Newsletter() {
         reset();
       } else if (result.status === "validation_error" && result.data) {
         toast.error(result.message);
+        reset();
       } else {
         toast.error(result.message);
       }
@@ -40,35 +40,35 @@ export default function Newsletter() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full mb-4">
-      <Heading level={3} className="mb-4">
-        {dictionary.ui.newsletter.title}
-      </Heading>
-      <p className="text-primary-600 mb-1">
-        {dictionary.ui.newsletter.description}
-      </p>
-      <div className="h-20 relative">
-        <TextInput
-          label=""
-          placeholder={dictionary.ui.newsletter.placeholder}
-          errors={errors}
-          register={register}
-          name={"email"}
-          variant="secondary"
-          inputClassName="w-full"
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+      <div className="flex flex-col gap-3">
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          {...register("email")}
+          className="w-full px-4 py-3 rounded-lg border-0 bg-[#525252] text-white placeholder-[#E8E8E8] focus:outline-none focus:ring-2 focus:ring-[#D4A373] transition-all"
         />
         <button
           type="submit"
-          className="absolute top-1/7 rtl:left-2 ltr:right-2"
           disabled={isSubmitting}
+          className="w-full bg-[#8B6F47] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#D4A373] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isSubmitting ? (
-            <Loader2 className="w-4 animate-spin" />
+            <>
+              <Loader2 className="w-4 h-4 animate-spin" />
+              Subscribing...
+            </>
           ) : (
-            <Send className="w-4 h-4 text-primary-600 rtl:rotate-270" />
+            <>
+              Subscribe
+              <Send className="w-4 h-4" />
+            </>
           )}
         </button>
       </div>
+      {errors.email && (
+        <p className="text-red-400 text-xs mt-2">{errors.email.message}</p>
+      )}
     </form>
   );
 }

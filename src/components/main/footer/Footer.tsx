@@ -8,11 +8,10 @@ import Container from '@/components/shared/Container';
 
 export default async function Footer() {
   const footerItems = await getFooterItems();
-  console.log(footerItems);
-  
+
 
   return (
-    <Container className="mt-10 pt-10 pb-5 border-t-1 border-primary-300 space-y-5">
+    <Container className="w-full border-t border-[#E8E8E8] bg-[#2F2F2F] text-[#F5F5F5]  p-10">
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-9">
           <FooterList footerItems={footerItems} />
@@ -24,7 +23,7 @@ export default async function Footer() {
       <div>
         <SocialMedia />
       </div>
-      <Separator />
+      <Separator className="bg-[#E8E8E8]" />
       <div>
         <a
           referrerPolicy="origin"
@@ -41,14 +40,14 @@ export default async function Footer() {
           />
         </a>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex mt-5 items-center justify-center">
         <SelectLanguage />
       </div>
       <div className="flex items-center justify-center flex-col md:flex-row md:justify-between">
-        <p className="text-primary-600">
+        <p className="text-accent-cream">
           کوکی‌ها | قوانین و شرایط | سیاست حفظ حریم خصوصی
         </p>
-        <p className="text-primary-600">
+        <p className="text-accent-cream">
           فروشگاه مبلمان ارم هوم | تمامی حقوق محفوظ است 2025
         </p>
       </div>
